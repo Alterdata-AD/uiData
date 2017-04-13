@@ -1,0 +1,94 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Slider
+ ========================================================================== */
+/*
+ * RTL Compatibility
+ */
+[data-ud-slider] {
+  direction: ltr;
+}
+html[dir="rtl"] .ud-slider > * {
+  direction: rtl;
+}
+/*
+ * 1. Create position context
+ * 2. Create stacking context to prevent z-index issues with other components
+ * 3. Deactivate browser history navigation in IE11
+ */
+.ud-slider {
+  /* 1 */
+  position: relative;
+  /* 2 */
+  z-index: 0;
+  /* 3 */
+  touch-action: pan-y;
+}
+/*
+ * 1. Reset list style without interfering with grid
+ */
+.ud-slider:not(.ud-grid) {
+  /* 1 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*
+ * Sub-object item
+ * 1. Position items above each other
+ */
+.ud-slider > * {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/*
+ * Clip child elements
+ */
+.ud-slider-container {
+  overflow: hidden;
+}
+/*
+ * Dragged
+ */
+.ud-slider:not(.ud-drag) {
+  -webkit-transition: -webkit-transform 200ms linear;
+  transition: transform 200ms linear;
+}
+/*
+ * 1. Makes text unselectable
+ */
+.ud-slider.ud-drag {
+  cursor: col-resize;
+  /* 1 */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/*
+ * 1. Prevents images and links from being dragged (default browser behavior)
+ * 2. Disables the default callout shown when you touch and hold a touch target
+ * Currently only works in Webkit
+ */
+.ud-slider a,
+.ud-slider img {
+  /* 1 */
+  -webkit-user-drag: none;
+  user-drag: none;
+  /* 2 */
+  -webkit-touch-callout: none;
+}
+/*
+ * 1. Prevents images and links from being dragged in Firefox
+ */
+.ud-slider img {
+  pointer-events: none;
+}
+/* Modifier: `ud-slider-fullscreen`
+ ========================================================================== */
+.ud-slider-fullscreen,
+.ud-slider-fullscreen > li {
+  height: 100vh;
+}

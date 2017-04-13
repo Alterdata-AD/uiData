@@ -1,0 +1,124 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Dotnav
+ ========================================================================== */
+/*
+ * 1. Gutter
+ * 2. Remove default list style
+ */
+.ud-dotnav {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  /* 1 */
+  margin-left: -15px;
+  margin-top: -15px;
+  /* 2 */
+  padding: 0;
+  list-style: none;
+}
+/*
+ * 1. Space is allocated solely based on content dimensions
+ * 2. Horizontal gutter is using `padding` so `ud-width-*` classes can be applied
+ */
+.ud-dotnav > * {
+  /* 1 */
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+  /* 2 */
+  padding-left: 15px;
+  margin-top: 15px;
+}
+/*
+ * DEPRECATED IE9 Support
+ */
+.ud-dotnav:before,
+.ud-dotnav:after {
+  content: "";
+  display: block;
+  overflow: hidden;
+}
+.ud-dotnav:after {
+  clear: both;
+}
+.ud-dotnav > * {
+  float: left;
+}
+/* Items
+ ========================================================================== */
+/*
+ * Items
+ * 1. Hide text if present
+ */
+.ud-dotnav > * > * {
+  display: block;
+  box-sizing: content-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(50, 50, 50, 0.1);
+  /* 1 */
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.ud-dotnav > * > :hover,
+.ud-dotnav > * > :focus {
+  background: rgba(50, 50, 50, 0.4);
+  /* 2 */
+  outline: none;
+}
+/* OnClick */
+.ud-dotnav > * > :active {
+  background: rgba(50, 50, 50, 0.6);
+}
+/* Active */
+.ud-dotnav > .ud-active > * {
+  background: rgba(50, 50, 50, 0.4);
+}
+/* Modifier: `ud-dotnav-contrast`
+ ========================================================================== */
+.ud-dotnav-contrast > * > * {
+  background: rgba(255, 255, 255, 0.4);
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ */
+.ud-dotnav-contrast > * > :hover,
+.ud-dotnav-contrast > * > :focus {
+  background: rgba(255, 255, 255, 0.7);
+}
+/* OnClick */
+.ud-dotnav-contrast > * > :active {
+  background: rgba(255, 255, 255, 0.9);
+}
+/* Active */
+.ud-dotnav-contrast > .ud-active > * {
+  background: rgba(255, 255, 255, 0.9);
+}
+/* Modifier: 'ud-dotnav-vertical'
+ ========================================================================== */
+/*
+ * DEPRECATED
+ */
+.ud-dotnav-vertical {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+/*
+ * DEPRECATED IE9 Support
+ */
+.ud-dotnav-vertical > * {
+  float: none;
+}

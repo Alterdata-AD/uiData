@@ -1,0 +1,92 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Notify
+ ========================================================================== */
+/*
+ * Message container for positioning
+ */
+.ud-notify {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1040;
+  box-sizing: border-box;
+  width: 350px;
+}
+/* Position modifiers
+========================================================================== */
+.ud-notify-top-right,
+.ud-notify-bottom-right {
+  left: auto;
+  right: 10px;
+}
+.ud-notify-top-center,
+.ud-notify-bottom-center {
+  left: 50%;
+  margin-left: -175px;
+}
+.ud-notify-bottom-left,
+.ud-notify-bottom-right,
+.ud-notify-bottom-center {
+  top: auto;
+  bottom: 10px;
+}
+/* Responsiveness
+========================================================================== */
+/* Phones portrait and smaller */
+@media (max-width: 479px) {
+  /*
+     * Fit in small screen
+     */
+  .ud-notify {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    margin: 0;
+  }
+}
+/* Sub-object: `ud-notify-message`
+========================================================================== */
+.ud-notify-message {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 15px;
+  background: #444;
+  color: #fff;
+  font-size: 16px;
+  line-height: 22px;
+  cursor: pointer;
+}
+/* Close in notify
+ ========================================================================== */
+.ud-notify-message > .ud-close {
+  visibility: hidden;
+  float: right;
+}
+.ud-notify-message:hover > .ud-close {
+  visibility: visible;
+}
+/* Modifier: `ud-alert-info`
+ ========================================================================== */
+.ud-notify-message-primary {
+  background: #ebf7fd;
+  color: #2d7091;
+}
+/* Modifier: `ud-alert-success`
+ ========================================================================== */
+.ud-notify-message-success {
+  background: #f2fae3;
+  color: #659f13;
+}
+/* Modifier: `ud-notify-message-warning`
+ ========================================================================== */
+.ud-notify-message-warning {
+  background: #fffceb;
+  color: #e28327;
+}
+/* Modifier: `ud-notify-message-danger`
+ ========================================================================== */
+.ud-notify-message-danger {
+  background: #fff1f0;
+  color: #d85030;
+}

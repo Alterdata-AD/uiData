@@ -1,0 +1,78 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Form advanced
+   Note: Only works in Webkit at the moment
+ ========================================================================== */
+/*
+ * 1. Style
+ * 2. Makes box more robust so it clips the child element
+ * 3. Vertical alignment
+ * 4. Remove default style
+ * 5. Fix black background on iOS
+ */
+.ud-form input[type="radio"],
+.ud-form input[type="checkbox"] {
+  /* 1 */
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border: 1px solid #aaa;
+  /* 2 */
+  overflow: hidden;
+  /* 3 */
+  margin-top: -4px;
+  vertical-align: middle;
+  /* 4 */
+  -webkit-appearance: none;
+  outline: 0;
+  /* 5 */
+  background: transparent;
+}
+/* Radio */
+.ud-form input[type="radio"] {
+  border-radius: 50%;
+}
+/*
+ * Checked
+ */
+.ud-form input[type=radio]:before,
+.ud-form input[type=checkbox]:before {
+  display: block;
+}
+/* Radio */
+.ud-form input[type=radio]:checked:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin: 2px auto 0;
+  border-radius: 50%;
+  background: #00a8e6;
+}
+/* Checkbox */
+.ud-form input[type=checkbox]:checked:before,
+.ud-form input[type=checkbox]:indeterminate:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  line-height: 12px;
+  color: #00a8e6;
+}
+.ud-form input[type=checkbox]:indeterminate:before {
+  content: "\f068";
+}
+/*
+ * Disabled
+ */
+.ud-form input[type=radio]:disabled,
+.ud-form input[type=checkbox]:disabled {
+  border-color: #ddd;
+}
+.ud-form input[type=radio]:disabled:checked:before {
+  background-color: #aaa;
+}
+.ud-form input[type=checkbox]:disabled:checked:before,
+.ud-form input[type=checkbox]:disabled:indeterminate:before {
+  color: #aaa;
+}

@@ -1,0 +1,39 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Accordion
+ ========================================================================== */
+/* Sub-object: `ud-accordion-title`
+ ========================================================================== */
+.ud-accordion-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding: 5px 15px;
+  background: #f5f5f5;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+/* Sub-object: `ud-accordion-content`
+ ========================================================================== */
+.ud-accordion-content {
+  padding: 0 15px 15px 15px;
+}
+/*
+ * Micro clearfix to make panels more robust
+ */
+.ud-accordion-content:before,
+.ud-accordion-content:after {
+  content: "";
+  display: table;
+}
+.ud-accordion-content:after {
+  clear: both;
+}
+/*
+ * Remove margin from the last-child
+ */
+.ud-accordion-content > :last-child {
+  margin-bottom: 0;
+}

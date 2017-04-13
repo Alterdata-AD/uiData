@@ -1,0 +1,164 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: HTML editor
+ ========================================================================== */
+/* Sub-object `ud-htmleditor-navbar`
+ ========================================================================== */
+.ud-htmleditor-navbar {
+  background: #eee;
+}
+/*
+ * Micro clearfix
+ */
+.ud-htmleditor-navbar:before,
+.ud-htmleditor-navbar:after {
+  content: "";
+  display: table;
+}
+.ud-htmleditor-navbar:after {
+  clear: both;
+}
+/* Sub-object `ud-htmleditor-navbar-nav`
+ ========================================================================== */
+.ud-htmleditor-navbar-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+.ud-htmleditor-navbar-nav > li {
+  float: left;
+}
+/*
+ * 1. Dimensions
+ * 2. Style
+ */
+.ud-htmleditor-navbar-nav > li > a {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  /* 1 */
+  height: 40px;
+  padding: 0 15px;
+  line-height: 40px;
+  /* 2 */
+  color: #444;
+  font-size: 11px;
+  cursor: pointer;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.ud-htmleditor-navbar-nav > li:hover > a,
+.ud-htmleditor-navbar-nav > li > a:focus {
+  background-color: #f5f5f5;
+  color: #444;
+  outline: none;
+  /* 2 */
+}
+/* OnClick */
+.ud-htmleditor-navbar-nav > li > a:active {
+  background-color: #ddd;
+  color: #444;
+}
+/* Active */
+.ud-htmleditor-navbar-nav > li.ud-active > a {
+  background-color: #f5f5f5;
+  color: #444;
+}
+/* Sub-object: `ud-htmleditor-navbar-flip`
+ ========================================================================== */
+.ud-htmleditor-navbar-flip {
+  float: right;
+}
+/* Sub-object for special buttons
+ ========================================================================== */
+[data-mode='split'] .ud-htmleditor-button-code,
+[data-mode='split'] .ud-htmleditor-button-preview {
+  display: none;
+}
+/* Sub-object `ud-htmleditor-content`
+ ========================================================================== */
+.ud-htmleditor-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+/*
+ * Micro clearfix
+ */
+.ud-htmleditor-content:before,
+.ud-htmleditor-content:after {
+  content: "";
+  display: table;
+}
+.ud-htmleditor-content:after {
+  clear: both;
+}
+/* Modifier `ud-htmleditor-fullscreen`
+ ========================================================================== */
+.ud-htmleditor-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 990;
+}
+.ud-htmleditor-fullscreen .ud-htmleditor-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.ud-htmleditor-fullscreen .ud-icon-expand:before {
+  content: "\f066";
+}
+/* Sub-objects `ud-htmleditor-code` and `ud-htmleditor-preview`
+ ========================================================================== */
+.ud-htmleditor-code,
+.ud-htmleditor-preview {
+  box-sizing: border-box;
+}
+.ud-htmleditor-preview {
+  padding: 20px;
+  overflow-y: scroll;
+  position: relative;
+}
+/*
+ * Tab view
+ */
+[data-mode='tab'][data-active-tab='code'] .ud-htmleditor-preview,
+[data-mode='tab'][data-active-tab='preview'] .ud-htmleditor-code {
+  display: none;
+}
+/*
+ * Split view
+ */
+[data-mode='split'] .ud-htmleditor-code,
+[data-mode='split'] .ud-htmleditor-preview {
+  float: left;
+  width: 50%;
+}
+[data-mode='split'] .ud-htmleditor-code {
+  border-right: 1px solid #eee;
+}
+/* Sub-object `ud-htmleditor-iframe`
+ ========================================================================== */
+.ud-htmleditor-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* CodeMirror modifications
+ ========================================================================== */
+.ud-htmleditor .CodeMirror {
+  padding: 10px;
+  box-sizing: border-box;
+}

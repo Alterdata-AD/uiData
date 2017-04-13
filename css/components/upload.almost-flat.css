@@ -1,0 +1,10 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Upload
+ ========================================================================== */
+/*
+ * Create a box-shadow when dragging a file over the upload area
+ */
+.ud-dragover {
+  box-shadow: 0 0 20px rgba(100, 100, 100, 0.3);
+}

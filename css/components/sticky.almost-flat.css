@@ -1,0 +1,26 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Sticky
+ ========================================================================== */
+/*
+ * 1. More robust if padding and border are used
+ * 2. Enable hardware acceleration for iOS browsers, resolves scrolling issue
+ */
+[data-ud-sticky].ud-active {
+  z-index: 980;
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  -webkit-backface-visibility: hidden;
+}
+/*
+ * Faster animations
+ */
+[data-ud-sticky][class*='ud-animation-'] {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+[data-ud-sticky].ud-animation-reverse {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}

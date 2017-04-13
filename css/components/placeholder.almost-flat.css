@@ -1,0 +1,29 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Placeholder
+ ========================================================================== */
+.ud-placeholder {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px dashed #ddd;
+  background: #fafafa;
+  color: #444;
+}
+/*
+ * Add margin if adjacent element
+ */
+* + .ud-placeholder {
+  margin-top: 15px;
+}
+/*
+ * Remove margin from the last-child
+ */
+.ud-placeholder > :last-child {
+  margin-bottom: 0;
+}
+/* Modifier: `ud-placeholder-large`
+ ========================================================================== */
+.ud-placeholder-large {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}

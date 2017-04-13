@@ -1,0 +1,136 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Nestable
+ ========================================================================== */
+.ud-nestable {
+  padding: 0;
+  list-style: none;
+}
+/*
+ * Disables the default callout shown when you touch and hold a touch target
+ * Currently only works in Webkit
+ */
+.ud-nestable a,
+.ud-nestable img {
+  -webkit-touch-callout: none;
+}
+/* Sub-object `ud-nestable-list`
+ ========================================================================== */
+.ud-nestable-list {
+  margin: 0;
+  padding-left: 40px;
+  list-style: none;
+}
+/* Sub-modifier `ud-nestable-item`
+ ========================================================================== */
+/*
+ * 1. Deactivate browser touch actions in IE11
+ */
+.ud-nestable-item {
+  /* 1 */
+  touch-action: none;
+}
+.ud-nestable-item + .ud-nestable-item {
+  margin-top: 10px;
+}
+.ud-nestable-list:not(.ud-nestable-dragged) > .ud-nestable-item:first-child {
+  margin-top: 10px;
+}
+/* Sub-modifier `ud-nestable-dragged`
+ ========================================================================== */
+/*
+ * 1. Reset style
+ */
+.ud-nestable-dragged {
+  position: absolute;
+  z-index: 1050;
+  pointer-events: none;
+  /* 1 */
+  padding-left: 0;
+}
+/* Sub-modifier `ud-nestable-placeholder`
+ ========================================================================== */
+.ud-nestable-placeholder {
+  position: relative;
+}
+.ud-nestable-placeholder > * {
+  opacity: 0;
+}
+.ud-nestable-placeholder:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px dashed #ddd;
+  opacity: 1;
+}
+/* Empty List
+ ========================================================================== */
+.ud-nestable-empty {
+  min-height: 30px;
+}
+/* Sub-object `ud-nestable-handle`
+ ========================================================================== */
+/*
+ * Deactivate browser touch actions in IE11
+ */
+.ud-nestable-handle {
+  touch-action: none;
+}
+/* Hover */
+.ud-nestable-handle:hover {
+  cursor: move;
+}
+/* Sub-object `ud-nestable-moving`
+ ========================================================================== */
+.ud-nestable-moving,
+.ud-nestable-moving * {
+  cursor: move;
+}
+/* Fixes dragging items over iframes */
+.ud-nestable-moving iframe {
+  pointer-events: none;
+}
+/* [data-nestable-action='toggle']
+ ========================================================================== */
+/*
+ * 1. Makes text unselectable. Happens if double clicked by mistake
+ */
+[data-nestable-action='toggle'] {
+  cursor: pointer;
+  /* 1 */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Sub-object `.ud-nestable-toggle`
+ ========================================================================== */
+.ud-nestable-toggle {
+  display: inline-block;
+  visibility: hidden;
+}
+.ud-nestable-toggle:after {
+  content: "\f147";
+  font-family: FontAwesome;
+}
+.ud-parent > :not(.ud-nestable-list) .ud-nestable-toggle {
+  visibility: visible;
+}
+/*
+ * Collapsed
+ */
+.ud-collapsed .ud-nestable-list {
+  display: none;
+}
+.ud-collapsed .ud-nestable-toggle:after {
+  content: "\f196";
+}
+/* Sub-object `ud-nestable-panel`
+ ========================================================================== */
+.ud-nestable-panel {
+  padding: 5px;
+  background: #f5f5f5;
+}

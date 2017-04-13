@@ -1,0 +1,94 @@
+/*! uiData 0.5 | http://uidata.alterdata.com.br | (c) 2017 Alterdata Software | MIT License */
+/* ========================================================================
+   Component: Progress
+ ========================================================================== */
+/*
+ * 1. Clearing
+ * 2. Vertical alignment if text is used
+ */
+.ud-progress {
+  box-sizing: border-box;
+  height: 20px;
+  margin-bottom: 15px;
+  background: #eee;
+  /* 1 */
+  overflow: hidden;
+  /* 2 */
+  line-height: 20px;
+}
+/*
+ * Add margin if adjacent element
+ */
+* + .ud-progress {
+  margin-top: 15px;
+}
+/* Sub-object: `ud-progress-bar`
+ ========================================================================== */
+/*
+ * 1. Transition
+ * 2. Needed for text
+ */
+.ud-progress-bar {
+  width: 0;
+  height: 100%;
+  background: #00a8e6;
+  float: left;
+  /* 1 */
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+  /* 2 */
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+/* Size modifiers
+ ========================================================================== */
+/* Mini */
+.ud-progress-mini {
+  height: 6px;
+}
+/* Small */
+.ud-progress-small {
+  height: 12px;
+}
+/* Color modifiers
+ ========================================================================== */
+.ud-progress-success .ud-progress-bar {
+  background-color: #8cc14c;
+}
+.ud-progress-warning .ud-progress-bar {
+  background-color: #faa732;
+}
+.ud-progress-danger .ud-progress-bar {
+  background-color: #da314b;
+}
+/* Modifier: `ud-progress-striped`
+ ========================================================================== */
+.ud-progress-striped .ud-progress-bar {
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+}
+/*
+ * Animation
+ */
+.ud-progress-striped.ud-active .ud-progress-bar {
+  -webkit-animation: ud-progress-bar-stripes 2s linear infinite;
+  animation: ud-progress-bar-stripes 2s linear infinite;
+}
+@-webkit-keyframes ud-progress-bar-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+@keyframes ud-progress-bar-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
